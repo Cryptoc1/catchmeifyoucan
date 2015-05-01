@@ -1,7 +1,6 @@
 var width = window.innerWidth,
     height = window.innerHeight;
 
-// Just to piss off the JavaScript nuts
 var elem = document.getElementById('drawing-area');
 var two = new Two({
     width: width,
@@ -43,15 +42,22 @@ function onDotMouseOver(e) {
     }, 500);
 }
 
+var count = 0;
+
 function onMouseDown(e) {
-    if (e.target.id == "two_3") {
-        var hitCount = document.getElementById('hit-count');
-        var _count = parseInt(hitCount.innerHTML);
-        hitCount.innerHTML = _count + 1;
-        console.log("hit")
-    } else if (e.target.id != "two_3") {
-        rotationAngle += .01;
+    if (count < 100) {
+        if (e.target.id == "two_3") {
+            var hitCount = document.getElementById('hit-count');
+            var _count = parseInt(hitCount.innerHTML);
+            hitCount.innerHTML = _count + 1;
+            console.log("hit")
+        } else if (e.target.id != "two_3") {
+            rotationAngle += .01;
+        }
+    } else {
+        alert("You've clicked over 100 times. I'm sorry, but that dot got away from you.");
     }
+    count += 1;
 }
 
 two.bind('update', function (frameCount) {
