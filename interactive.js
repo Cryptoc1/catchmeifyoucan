@@ -45,7 +45,7 @@ function onDotMouseOver(e) {
 var count = 0;
 
 function onMouseDown(e) {
-    if (count < 100) {
+    if (count < 50) {
         if (e.target.id == "two_3") {
             var hitCount = document.getElementById('hit-count');
             var _count = parseInt(hitCount.innerHTML);
