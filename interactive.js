@@ -55,7 +55,7 @@ function onMouseDown(e) {
             rotationAngle += .01;
         }
     } else {
-        alert("You've clicked over 100 times. I'm sorry, but that dot got away from you.");
+        alert("You've clicked over 50 times. I'm sorry, but that dot got away from you.");
     }
     count += 1;
 }
